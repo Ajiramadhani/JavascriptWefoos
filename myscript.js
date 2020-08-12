@@ -1,4 +1,4 @@
-var base_url = "http://localhost/mystore/";
+var base_url = "https://wefoosauthentic.com/";
 var UIController = (function () {
 	var DOMString = {
 		btnAddCart: ".add-to-cart-link",
@@ -701,8 +701,9 @@ var Controller = (function (uiCtr) {
 				url: base_url + "Home/getTotal",
 				success: function (data) {
 					uiCtr.tampilTotalBelanja(data);
-					if (location.pathname.substring(1) == "mystore/Cart") {
-						uiCtr.tampilTotalBelanjaKeranjang(data);
+					if (location.pathname=="/Cart") {
+					    getAllPemesanan();
+				// 		uiCtr.tampilTotalBelanjaKeranjang(data);
 					}
 				},
 				error: function () {
@@ -735,7 +736,7 @@ var Controller = (function (uiCtr) {
 			});
 		}
 
-		if (location.pathname.substring(1) == "mystore/Cart") {
+		if (location.pathname=="/Cart") {
 			getAllPemesanan();
 		}
 
